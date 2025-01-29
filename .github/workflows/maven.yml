@@ -1,0 +1,30 @@
+name: API Test Automation with Karate
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: 0 20 * * 6
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3.9.0
+        with:
+          distribution: 'adopt'
+          java-version: '17'
+          cache: 'maven'
+      - name: Run all tests
+        run: mvn clean test
+      - name: Publish Test Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: RunReports
+          path: target/karate-reports

@@ -1,0 +1,17 @@
+*.iml
+.allure/
+.gradle/
+target/
+.project
+.settings/
+.classpath
+.idea/
+target/
+allure-results/
+build/
+logs/
+bin
+test-output
+doc
+testng.out.xml
+.DS_Store
