@@ -10,10 +10,11 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>17</java.version>
-        <maven.compiler.version>3.11.0</maven.compiler.version>
-        <maven.surefire.version>3.0.0</maven.surefire.version>
-        <karate.version>1.5.0</karate.version>
-    </properties>    
+        <maven.compiler.version>3.15.0</maven.compiler.version>
+        <maven.surefire.version>3.5.6</maven.surefire.version>
+        <karate.version>1.5.1</karate.version>
+        <spotless.version>2.44.5</spotless.version>
+    </properties>
 
     <dependencies>         
         <dependency>
@@ -54,8 +55,21 @@
                         <include>**/KarateTestRunner.java</include>
                     </includes>
                 </configuration>
-            </plugin>          
-        </plugins>        
+            </plugin>
+            <plugin>
+                <groupId>com.diffplug.spotless</groupId>
+                <artifactId>spotless-maven-plugin</artifactId>
+                <version>${spotless.version}</version>
+                <configuration>
+                    <java>
+                        <googleJavaFormat/>
+                        <removeUnusedImports/>
+                        <trimTrailingWhitespace/>
+                        <endWithNewline/>
+                    </java>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>       
     
 </project>

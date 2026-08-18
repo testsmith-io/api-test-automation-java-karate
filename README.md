@@ -17,11 +17,11 @@ All examples in this repository are designed to work with the **Practice Softwar
 
 ## Examples Included
 1. **GET Request**: Fetch a list of brands with `GET /brands`.
-2. **Login API**: Authenticate using `POST /login` with an email/password payload.
+2. **Login API**: Authenticate using `POST /users/login` with an email/password payload.
 3. **Protected API Request**: Authenticate, then use a token to fetch data with `GET /invoices`.
 
 ## Prerequisites
-- **Java 16+**
+- **Java 17+**
 - **Maven**
 - An IDE like **IntelliJ IDEA Community Edition**
 
@@ -32,7 +32,7 @@ All examples in this repository are designed to work with the **Practice Softwar
    ```
 2. Navigate to the project directory:
    ```bash
-   cd api-test-automation-karate
+   cd api-test-automation-java-karate
    ```
 3. Run the tests:
    ```bash
